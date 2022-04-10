@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Good Vibes Yoga {% endblock %}   
+{% block content %}      
+    <h1>Good Vibes Yoga</h1>
+
+    <figure>
+        <img src="{{url_for('static', filename='images/yoga_logo.jpg')}}" class="img-fluid d-block mx-auto my-5" alt="{{yoga}}">
+        <figcaption class = "figure-caption">iStock</figcaption>
+    </figure>
+    <h5>Welcome to Good Vibes Yoga! We offer many different classes for many different skill levels! Here you can look at all of our classes, find one that may work well for you, and even add a new class!</h5>
+    <a class="btn btn-primary btn-lg" href="{{url_for('classes')}}" role="button">View Classes!</a> 
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Class!{% endblock %}
+{% block content %}
+<div class="container my-5"> 
+<h1>{{yc['name']}}</h1>
+<table class="table table-striped">
+<tr>   
+    <th scope="row">Date: </th>
+    <td>{{yc['date']}}</td>
+</tr>
+<tr>
+    <th scope="row">Duration: </th>
+    <td>{{yc['duration']}}</td>
+</tr>
+<tr>
+    <th scope="row">Yoga Type: </th>
+    <td>{{yc['yoga_type']}}</td>
+</tr>
+<tr>
+    <th scope="row">Yoga Level: </th>
+    <td>{{yc['yoga_level']}}</td>
+</tr>
+<tr>
+    <th scope="row">Trainer: </th>
+    <td>{{yc['trainer']}}</td>
+</tr>
+<tr>
+    <th scope="row">Description: </th>
+    <td>{{yc['description']}}</td>
+</tr>
+</table>
+<a class="btn btn-primary btn-lg" href="{{url_for('edit_class', class_id=yc['name'])}}" role="button">Edit Class!</a>
+</div>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Class Form{% endblock %}
+{% block content %}
+{% if class_id %}
+{% set yoga_name = yc['name'] %}
+{% set yoga_date = yc['date'] %}
+{% set yoga_duration = yc['duration'] %}
+{% set yoga_ty = yc['type'] %}
+{% set yoga_lev = yc['level'] %}
+{% set yoga_trainer = yc['trainer'] %}
+{% set yoga_description = yc['description'] %}
+<form method = 'POST' name = "edit_class">
+    <div>
+        <label for="slug">Name</label>
+        <input type="text" id="name" name="name" value = "{{yoga_name}}">
+    </div>    
+    
+    <div>
+        <label for="name">Date</label>
+        <input type="text" id="date" name="date" value = {{yoga_date}}>
+    </div>
+    
+    <div>
+        <label for="description">Duration</label>
+        <input type="text" id="duration" name="duration" value = {{yoga_duration}}>
+    </div>
+    
+    <div>
+        <label for="image">Type</label>
+        <input type="text" id="yoga_type" name="yoga_type" value = {{yoga_ty}}>
+    </div>
+    
+    <div>
+        <label for="image-credit">Level</label>
+        <input type="text" id="yoga_level" name="yoga_level" value = {{yoga_lev}}>
+    </div>
+    
+    <div>
+        <label for="source-url">Trainer</label>
+        <input type="text" id="trainer" name="trainer" value = {{yoga_trainer}}>
+    </div>
+    
+    <div>
+        <label for="source-credit">Description</label>
+        <input type="text" id="description" name="description" value = {{yoga_description}}>
+    </div>
+    
+    
+    
+    <button type="submit" value="Submit">Submit</button>
+    <button type="reset" value="Reset">Reset</button>
+</form>
+{% else %}
+{% set yoga_name = '' %}
+{% set yoga_date = '' %}
+{% set yoga_duration = '' %}
+{% set yoga_ty = '' %}
+{% set yoga_lev = '' %}
+{% set yoga_trainer= '' %}
+{% set yoga_description = '' %}
+
+
+
+
+<form method = 'POST' name = "add_class">
+    <div>
+        <label for="slug">Name</label>
+        <input type="text" id="name" name="name">
+    </div>    
+    
+    <div>
+        <label for="name">Date</label>
+        <input type="text" id="date" name="date">
+    </div>
+    
+    <div>
+        <label for="description">Duration</label>
+        <input type="text" id="duration" name="duration">
+    </div>
+    
+    <div>
+        <label for="image">Type</label>
+        <input type="text" id="yoga_type" name="yoga_type">
+    </div>
+    
+    <div>
+        <label for="image-credit">Level</label>
+        <input type="text" id="yoga_level" name="yoga_level">
+        </select>
+    </div>
+    
+    <div>
+        <label for="source-url">Trainer</label>
+        <input type="text" id="trainer" name="trainer">
+    </div>
+    
+    <div>
+        <label for="source-credit">Description</label>
+        <input type="text" id="description" name="description">
+    </div>
+    
+    
+    
+    <button type="submit" value="Submit">Submit</button>
+    <button type="reset" value="Reset">Reset</button>
+</form>
+{% endif %}
+{% endblock %}
